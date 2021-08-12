@@ -1,12 +1,11 @@
 from django.shortcuts import render, HttpResponse
+from .models import *
 
 def index(request):
     context = {
-        'saludo': 'Hola'
+        'books': Book.objects.all()
     }
-    return render(request, 'index.html', context)
+    return render(request, 'books.html', context)
 
 
-def second(request, name):
-    return HttpResponse('Hola ' + name)
 
