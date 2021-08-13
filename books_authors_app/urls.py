@@ -9,6 +9,8 @@ urlpatterns = [
     path('authors/<int:author_id>/assign',views.assign_author),
     path('authors',views.authors),
     path('authors/create',views.create_author),
-    path('authors/<int:author_id>',views.show_author), 
+    path('authors/<int:author_id>',views.show_author),
+    path('authors/<int:author_id>/delete',views.delete_author),
+    path('books/<int:book_id>/delete/',views.delete_book), 
 ]
 #quizas falta el para eliminar

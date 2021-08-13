@@ -10,6 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Libros/Autores  - Autores </title>
     {% load static %}
+    <link rel="stylesheet" href="{%static 'css/misestilos.css' %}">
 </head>
 <body>
     <nav>
@@ -52,6 +53,7 @@
                         <td>{{author.first_name}} {{author.last_name}}</td>
                         <td>{{author.notas}}</td>
                         <td><a href="/authors/{{author.id}}">Ver</a></td>
+                        <td><a href="/authors/{{author.id}}/delete">Eliminar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

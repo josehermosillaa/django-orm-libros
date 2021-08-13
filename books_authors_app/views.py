@@ -51,6 +51,29 @@ def show_author(request, author_id):
 
     return render(request, 'author.html', context)
 
+def delete_author(request, author_id):
+    this_author = Author.objects.get(id = author_id)
+    this_author.delete()
+    return redirect('/authors')
+
+def delete_book(request, book_id):
+    this_book = Book.objects.get(id = book_id)
+    this_book.delete()
+    return redirect('/books')
+    
+
+# def delete_author(request, author_id):
+#     this_author = Author.objects.get(id = author_id)
+#     this_books = Book.objects.filter(authors__id = author_id)
+#     for a in this_books:
+#         this_author.books.remove(a.id)
+#     return redirect('/authors')
+
+# def delete_book(request, book_id):
+#     this_author = Author.objects.filter(books__id = book_id)
+#     this_book = Book.objects.get(id = book_id)
+#     this_book.authors.remove(this_author)
+#     return redirect('/books')
 
 
 
